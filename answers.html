@@ -27,6 +27,11 @@
 
 <p id="talkpage">
 answers go here (PRIVATE!!!)
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const receivedData = urlParams.get('questiondata');
+    document.write("anon says: " + receivedData);
+  </script>
 </p>
 
 <hr>
