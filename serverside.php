@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $current_messages .= "<div class='message'><p><strong>anon says:</strong> $message</p></div>\n";
     file_put_contents($file, $current_messages);
 
-    header("Location: index.html");
+    header("Location: answers.html");
     exit();
 }
 ?>
