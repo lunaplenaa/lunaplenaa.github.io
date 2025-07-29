@@ -59,10 +59,18 @@ send me an anonymous message!
       return response.text(); 
     })
     .then(data => {
-      console.log(data);
-      alert("successfully submitted!");
-      document.getElementById("message").value = "";
+      console.log("Server response:", data);  // Log the server response for debugging
+      if (data.includes("Message submitted successfully")) {
+      alert("Message submitted successfully!");
+      document.getElementById("message").value = "";  // Clear the input field
+    } else {
+      alert("There was an issue submitting your message. Please try again.");
+    }
     })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("There was an error submitting the message. Please try again.");
+    });  
   });
 </script>
 </p>
