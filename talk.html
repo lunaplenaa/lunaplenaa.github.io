@@ -51,6 +51,7 @@ send me an anonymous message!
       body: new URLSearchParams({
         "message": message
       })
+      document.getElementById("message").value = "";
     })
     .then(response => {
       if (!response.ok) { 
