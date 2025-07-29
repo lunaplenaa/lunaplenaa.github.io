@@ -37,7 +37,12 @@ send me an anonymous message!
     e.preventDefault(); 
 
     var message = document.getElementById("message").value;
-  
+
+    if (!message.trim()) {
+      alert("please enter a message");
+      return;
+    }
+    
     fetch("https://script.google.com/macros/s/AKfycbwBcLQevkDHJVa-Ro9efVkE8ISglDuWhhrEpnzhSST-68TaEZDbHv5yshQwhVpFXNl1/exec", {
       method: "POST",
       headers: {
@@ -53,8 +58,8 @@ send me an anonymous message!
       document.getElementById("message").value = "";
     })
     .catch(error => {
-      alert("error in submission");
       console.error("error:", error);
+      alert("error in submission");
     });
   });
 </script>
