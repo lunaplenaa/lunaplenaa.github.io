@@ -27,13 +27,30 @@
 
 <p id="talkpage">
 send me an anonymous message! 
-<form action="messagesdata.php" method="POST"> 
-  <input type="text" placeholder="talk to me!" maxlength="256" id="messagebox" name="message">
-  <input type="submit" value="submit!">
-<form>
-</p>
+<script>
+  document.getElementById("messageForm").addEventListener("submit", function(e) {
+  e.preventDefault(); 
 
-<hr>
+  var message = document.getElementById("message").value;
+
+  fetch("https://script.google.com/macros/s/AKfycbxvDDlHbJUYVOYE5UgUpjKjIsBtASWysMPI-RQOdPjKx0Cy4uGhYsO51_DR_GmgF6Vw/exec", {
+    method: "POST",
+    body: new URLSearchParams({
+      "message": message
+    })
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert("Message submitted successfully!");
+    document.getElementById("message").value = "";
+  })
+  .catch(error => {
+    alert("There was an error submitting the message.");
+    console.error("Error:", error);
+  });
+});
+</script>
+</p>
 
 </main>
 </body>
