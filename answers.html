@@ -28,11 +28,13 @@
 <p id="talkpage">
 answers go here (PRIVATE!!!)
   <br>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedData = urlParams.get('questiondata');
-    document.write("anon says: " + receivedData);
-  </script>
+  <?php
+    $file = 'messages.txt';
+    $messages = file_get_contents($file);
+
+    echo $messages;
+?>
+  
 </p>
 
 <hr>
