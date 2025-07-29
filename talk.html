@@ -41,11 +41,11 @@ send me an anonymous message!
   })
   .then(response => response.text())
   .then(data => {
-    alert("Message submitted successfully!");
+    alert("successfully submitted!");
     document.getElementById("message").value = "";
   })
   .catch(error => {
-    alert("There was an error submitting the message.");
+    alert("error in submission");
     console.error("Error:", error);
   });
 });
