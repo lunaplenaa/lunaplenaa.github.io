@@ -27,6 +27,10 @@
 
 <p id="talkpage">
 send me an anonymous message! 
+<form id="messageForm">
+  <textarea id="message" name="message" placeholder="talk to me!" required></textarea>
+  <button type="submit">submit</button>
+  </form>
 <script>
   document.getElementById("messageForm").addEventListener("submit", function(e) {
   e.preventDefault(); 
