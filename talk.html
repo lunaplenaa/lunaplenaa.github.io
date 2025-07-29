@@ -62,11 +62,11 @@ send me an anonymous message!
     })
     .then(data => {
       console.log("Server response:", data);  // Log the server response for debugging
-      if (data.includes("Message submitted successfully")) {
-      alert("Message submitted successfully!");
+      if (data.includes("message submitted!")) {
+      alert("message submitted!");
       document.getElementById("message").value = "";  // Clear the input field
     } else {
-      alert("There was an issue submitting your message. Please try again.");
+      alert("message submitted!");
       document.getElementById("message").value = "";
     }
     })
