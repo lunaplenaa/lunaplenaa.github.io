@@ -66,11 +66,13 @@ send me an anonymous message!
       document.getElementById("message").value = "";  // Clear the input field
     } else {
       alert("There was an issue submitting your message. Please try again.");
+      document.getElementById("message").value = "";
     }
     })
     .catch(error => {
       console.error("Error:", error);
       alert("There was an error submitting the message. Please try again.");
+      document.getElementById("message").value = "";
     });  
   });
 </script>
